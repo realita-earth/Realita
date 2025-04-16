@@ -1,41 +1,66 @@
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import './App.css';
 
-import React, { Component } from 'react';
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        {/* Upload your logo to /public/logo.png */}
+        <img src="/logo.png" className="App-logo" alt="REALITA" />
 
-import PropTypes from 'prop-types';
-import load from 'absoluteLoad';
+        <h1>REALITA</h1>
+        <p>THE PURCHASE OF A NEW REALITY</p>
 
-export default class App extends Component {
-  static propTypes = {
-    onReady: PropTypes.func.isRequired,
-  };
+        {/* Core Ration System */}
+        <div className="Manifesto">
+          <h2>THE ECONOMY OF UNITY</h2>
+          
+          <div className="Ration">
+            <h3>When you buy 100 REALITA:</h3>
+            <ul>
+              <li>50 → Your Wallet</li>
+              <li>10 → Gold Reserve</li>
+              <li>10 → Land Acquisition</li>
+              <li>10 → Water Projects</li>
+              <li>10 → Energy Infrastructure</li>
+              <li>10 → Education Fund</li>
+            </ul>
+          </div>
 
-  constructor(props) {
-    super(props);
-    this.state = { users: [] };
-  }
+          <div className="Donation">
+            <h3>When you donate 100 REALITA:</h3>
+            <ul>
+              <li>20 → Burned (Value Reinforcement)</li>
+              <li>30 → Global Charity</li>
+              <li>20 → Land Stewardship</li>
+              <li>20 → Clean Water Access</li>
+              <li>10 → Energy Redistribution</li>
+            </ul>
+          </div>
+        </div>
 
-  async componentDidMount() {
-    const users = load();
-    this.setState({ users });
-  }
+        {/* Philosophy */}
+        <div className="Philosophy">
+          <h3>OUR PURPOSE:</h3>
+          <p>
+            To unify purchasing power into <strong>tangible change</strong>.<br />
+            Every transaction builds <strong>real infrastructure</strong> —<br />
+            not abstract wealth, but <strong>breathable air, drinkable water,<br />
+            and land owned by the people</strong>.
+          </p>
+        </div>
 
-  componentDidUpdate() {
-    this.props.onReady();
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state.users.map(user => (
-          <div key={user.id}>{user.name}</div>
-        ))}
-      </div>
-    );
-  }
+        {/* Call-to-Action */}
+        <a
+          className="App-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          JOIN THE RECLAMATION
+        </a>
+      </header>
+    </div>
+  );
 }
+
+export default App;
